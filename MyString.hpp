@@ -10,6 +10,11 @@ public:
 	MyString() {};
 	MyString(int size);
 	MyString(const char* word);
+	~MyString();
+	MyString& operator=(const MyString& word);
+	MyString operator+(const MyString& word);
+
+	char* GetStr();
 
 private:
 	char* str = nullptr;
