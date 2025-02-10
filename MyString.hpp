@@ -6,6 +6,11 @@
 class MyString
 {
 public:
+
+	MyString() {};
+	MyString(int size);
+	MyString(const char* word);
+
 private:
 	char* str = nullptr;
 	unsigned int size{ 0 };
