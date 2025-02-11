@@ -1,18 +1,26 @@
 #ifndef _MY_STRING_HPP_
 #define _MY_STRING_HPP_
 #include <iostream>
-#include <string.h>
+#include <cstring>
+
+
 
 class MyString
 {
 public:
 
-	MyString() {};
+	MyString();
 	MyString(int size);
 	MyString(const char* word);
+	MyString(MyString&& word);
+
+
 	~MyString();
+
 	MyString& operator=(const MyString& word);
+	MyString& operator=(MyString&&);
 	MyString operator+(const MyString& word);
+	MyString& operator+=(const char* word);
 
 	char* GetStr();
 
