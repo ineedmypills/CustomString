@@ -22,7 +22,14 @@ public:
 	MyString operator+(const MyString& word);
 	MyString& operator+=(const char* word);
 
-	char* GetStr();
+	int GetSize();
+	void Resize(unsigned int a);
+	void Clear();
+	bool Empty();
+	void PushBack(char a);
+	void Print();
+	const char* GetStr();
+
 
 private:
 	char* str = nullptr;

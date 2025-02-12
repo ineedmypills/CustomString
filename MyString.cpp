@@ -2,6 +2,9 @@
 
 
 MyString::MyString() {
+#include <cstring>
+#include <iostream>
+#include <ostream>
 	this->size = 255;
 	this->str = new char[this->size];
 }
@@ -91,8 +94,61 @@ MyString& MyString::operator+=(const char* word)
 	return *this;
 }
 
-char* MyString::GetStr()
+
+int MyString::GetSize()
 {
+	return this->size;
+}
+
+void MyString::Resize(unsigned int cell) {
+	char* newStr = new char[cell + 1];
+	if (this->str) {
+		unsigned int copySize = (cell < this->size) ? cell : this->size;
+		std::memcpy(newStr, this->str, copySize);
+		newStr[copySize] = '\0';
+	}
+	else {
+		newStr[0] = '\0';
+	}
+
+	delete[] this->str;
+	this->str = newStr;
+	this->size = cell;
+}
+
+void MyString::Clear() {
+	delete[] this->str;
+	this->str = nullptr;
+	size = 0;
+}
+
+bool MyString::Empty() {
+	return size == 0 || this->str == nullptr;
+}
+
+void MyString::PushBack(char newChar) {
+	char* newStr = new char[size + 2];
+	if (this->str) {
+		std::memcpy(newStr, this->str, size);
+	}
+	newStr[size] = newChar;
+	newStr[size + 1] = '\0';
+
+	delete[] this->str;
+	this->str = newStr;
+	size++;
+}
+
+void MyString::Print() {
+	if (this->str) {
+		std::cout << str << std::endl;
+	}
+	else {
+		std::cout << "empty" << std::endl;
+	}
+}
+
+const char* MyString::GetStr() {
 	return this->str;
 }
 

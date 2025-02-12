@@ -11,4 +11,10 @@ int main() {
 	three += " Nu Darova";
 
 	std::cout << three.GetStr() << std::endl;
+	std::cout << three.Empty() << std::endl;
+	
+	std::cout << three.GetSize() << std::endl;
+	three.Clear();
+	std::cout << three.GetSize() << std::endl;
+	std::cout << three.Empty() << std::endl;
 }
