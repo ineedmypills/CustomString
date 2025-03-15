@@ -152,4 +152,26 @@ const char* MyString::GetStr() {
 	return this->str;
 }
 
+bool operator<(const MyString& left, const MyString& right) {
+	return strcmp(left.str, right.str) < 0;
+}
 
+bool operator>(const MyString& left, const MyString& right) {
+	return strcmp(left.str, right.str) > 0;
+}
+
+bool operator<=(const MyString& left, const MyString& right) {
+	return strcmp(left.str, right.str) <= 0;
+}
+
+bool operator>=(const MyString& left, const MyString& right) {
+	return strcmp(left.str, right.str) >= 0;
+}
+
+bool operator==(const MyString& left, const MyString& right) {
+	return strcmp(left.str, right.str) == 0;
+}
+
+bool operator!=(const MyString& left, const MyString& right) {
+	return strcmp(left.str, right.str) != 0;
+}

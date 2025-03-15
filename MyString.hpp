@@ -22,6 +22,14 @@ public:
 	MyString operator+(const MyString& word);
 	MyString& operator+=(const char* word);
 
+	friend bool operator<(const MyString& left, const MyString& right);
+	friend bool operator>(const MyString& left, const MyString& right);
+	friend bool operator<=(const MyString& left, const MyString& right);
+	friend bool operator>=(const MyString& left, const MyString& right);
+	friend bool operator==(const MyString& left, const MyString& right);
+	friend bool operator!=(const MyString& left, const MyString& right);
+
+
 	int GetSize();
 	void Resize(unsigned int a);
 	void Clear();
